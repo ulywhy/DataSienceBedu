@@ -36,7 +36,7 @@ Objetivo: Apoyar la **toma de decisiones** del sector retail (Moda)
 
 el dataset propuesto recomienda los siguientes enfoques:
 
-- **_Analyze consumer purchasing patterns over time._**
+- _Analyze consumer purchasing patterns over time._
 
 - **_Identify popular product categories and high-performing segments._**
 
@@ -51,13 +51,7 @@ el dataset propuesto recomienda los siguientes enfoques:
 
 ![alt text](image-1.png)
 
----
 
-# Dataset
-## preprocesamiento
-
-- se reemplazan valores "yes", "no" por constantes TRUE, FALSE
-- se eliminan espacios en blanco despues del separador 
 ---
 
 # Dataset
@@ -98,6 +92,15 @@ el dataset propuesto recomienda los siguientes enfoques:
     <td>Frequency of Purchases
 </table>
 
+
+---
+
+# Dataset
+## preprocesamiento
+
+- se reemplazan valores "yes", "no" por constantes TRUE, FALSE
+- se eliminan espacios en blanco despues del separador 
+
 ---
 
 # Base de Datos
@@ -124,21 +127,13 @@ Notamos que se pueden crear entidades para almacenar valores discretos que puede
 # Base de Datos
 ## Diseño <sub>_modelado de entidades independientes_</sub>
 
-Las evaluaciones de los clientes no necesitan referencia hacia otras tablas.
-
 <table>
 <tr>
     <td>Cloth
-    <td>
 <tr>
     <td>Customer
-    <td>
-<tr>
-    <td>Review
-    <td><sub><sup>podria manejarse una referencia circular al cliente que la emitió</sub></sup>
 <tr>
     <td>Purchase
-    <td>
 </table>
 
 ---
@@ -175,7 +170,7 @@ Para insertar en las tablas dependientes creamos un script en Bash para Parsear 
 ejecutamos:
 - construcción del esquema (createDatabase.sql)
 - insertar Enums (enum_insert.sql)
-- insertar tablas dependientes (insertCustomers.sql)
+- insertar tablas dependientes (insertCustomers.sql, insertPurchases.sql)
 
 ---
 
@@ -183,35 +178,36 @@ ejecutamos:
 
 ---
 
-# Análisis <sub>¿Cual es el total y promedio de compras?
-![alt text](image-8.png)
-[script](https://github.com/ulywhy/DataSienceBedu/blob/main/bloque1/proyecto/analysisQueries.sql)
----
+# Análisis <sub>¿A qué estado se envian más productos en cada temporada y de cuánto es el ingreso?
 
-# Análisis <sub>¿Cual es el total de ventas por producto?
-
-![alt text](image-7.png)
+![alt text](image-13.png)
 
 ---
 
-# Análisis <sub>¿Que temporada tiene el producto mas/menos vendido y cúal es?
+# Análisis <sub> ¿Cuál es el producto más vendido en tiendas?
 
-![alt text](image-9.png)
+![alt text](image-11.png)
 
 ---
 
-- ¿En que estado compran mas productos?
-- ¿En que estado gastaron mas?
-- ¿Cual es el metodo de pago mas/menos utilizado por region? 
-- ¿Como se distribuye la edad de los clientes?
-- ¿Quienes son los clientes que compran frecuentemente?  
+# Análisis <sub>¿En qué temporada se envian más productos y cuáles son?
+
+![alt text](image-14.png)
+
+---
+
+# Análisis <sub>¿en qué estado gastaron más, por tipo de método de pago?
+
+![alt text](image-10.png)
 
 ---
 
 # Conclusiones
-- es importante cruzar mas datos para obtener información con mayor detalle para toma de decisiones especificas, pero dado el diseño normalizado de la BD los queries pueden ser complejos y dificil de mantener; Es posible el uso de StoredProcedures para el procesamiento de datos por etapas, una desventaja puede ser el tiempo de procesamiento.
+- es importante cruzar mas datos para obtener información con mayor detalle para toma de decisiones especificas.
 
-Recomendamos utilizar los datos sin normalizar tal cual se obtienen del csv, se consideró este enfoque con SQL para practica de conceptos SQL.
+- dado el diseño normalizado de la BD los queries pueden ser complejos y dificil de mantener
+
+- puese ser coveniente el uso de vistas para presentar los datos sin normalización.
 
 
 
