@@ -166,7 +166,6 @@ cargamos el csv en Atlas y con ayuda de filtros obtuvimos los valores de los Enu
 
 Para insertar en las tablas dependientes creamos un script en Bash para Parsear el CSV, que genera un [archivo de salida](https://github.com/ulywhy/DataSienceBedu/blob/main/bloque1/proyecto/insertCustomers.sql) con los inserts correspondientes y select anidados para obtener los Id de los Enum. [script](https://github.com/ulywhy/DataSienceBedu/blob/main/bloque1/proyecto/load_data.sh)
 
-![alt text](image-4.png)
 
 ---
 
